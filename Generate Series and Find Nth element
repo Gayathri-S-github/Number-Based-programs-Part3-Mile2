@@ -1,0 +1,32 @@
+/*
+Example 1: If there are 3 numbers are a=1,b=3,c=6 and N=17. 
+The series will be formed as belows:
+1,3,6,8,11,13,16,18,21,23,26,28,31,33,36,38,41
+17th element i the series is 41.
+Example 2: a=5, b=-2, c=4, and N=14
+The series will be formed as,
+14th number in the series is -56
+*/
+
+import java.io.*; 
+import  java.util.*; 
+ 
+// Read only region start 
+class UserMainCode 
+{ 
+ 
+ public int seriesN(int input1,int input2,int input3,int input4){ 
+  // Read only region end 
+  // Write code here... 
+  int i=3,diff=0,next=0; 
+  while(i<input4){ 
+   diff=input2-input1; 
+   next=input3+diff; 
+   input1=input2; 
+   input2=input3; 
+   input3=next; 
+   i++; 
+  } 
+  return next; 
+ } 
+} 
