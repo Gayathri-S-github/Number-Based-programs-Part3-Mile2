@@ -1,0 +1,40 @@
+/* This program will give the answer for both sum of prime index and sum of nonprime index. */
+
+public class nonprimeindexsum {
+static int index(int arr[])
+{
+int flag=0,len,psum=0,npsum=arr[0]+arr[1];
+len=arr.length;
+if (len==2)
+return 0;
+int arrindex=2;
+while(arrindex<len)
+{
+for(int i=2;i<=arrindex/2;i++ )
+{
+if(arrindex%i==0)
+{
+npsum=npsum+arr[arrindex];
+flag=1;
+break;
+  }
+}
+if(flag==0)
+psum=psum+arr[arrindex];
+if(flag==1)
+flag=0;
+arrindex++;
+}
+System.out.println(npsum);
+return psum;
+}
+public static void main(String[] args)
+{
+ 
+int[] arr= {10,20,30,40,50,60,70,80,90,100};
+System.out.println(index(arr));
+}
+}
+/* Output:
+340
+210  */
